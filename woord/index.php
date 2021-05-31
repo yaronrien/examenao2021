@@ -1,4 +1,6 @@
 <?php
+
+    php include_once '../assets/php/partials/navbar.php'
     require '../assets/php/partials/config.php';
     try  {
         $connection = new PDO($dsn, $username, $password, $options);
@@ -25,7 +27,6 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-    <?php include_once '../assets/php/partials/navbar.php'  ?>
     <div class="d-flex flex-column align-items-center w-100 text-center">
         <h1 class="mt-5">Het woord: <?= $_GET['woord'] ?></h1>
         <p class="fw-bold mt-5">Dit woord komt in totaal <?= $result[0]['aantalInTeksten'] ?> keer voor in teksten en heeft <?= $result[0]['aantalKlinkers'] ?> klinkers en <?= $result[0]['aantalMedeklinkers'] ?> medeklinkers</p>
