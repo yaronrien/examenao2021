@@ -3,7 +3,7 @@
     try  {
         $connection = new PDO($dsn, $username, $password, $options);
 
-        $sql = 'SELECT woorden.aantalInTeksten, woorden.aantalKlinkers, woorden.aantalMedeklinkers, teksten.tekstTitel FROM woorden
+        $sql = 'SELECT woorden.aantalInTeksten, woorden.aantalKlinkers, woorden.aantalMedeklinkers, teksten.tekstTitel, teksten.tekstID FROM woorden
         LEFT JOIN tekstwoorden ON woorden.woordID = tekstwoorden.woordID
         LEFT JOIN teksten ON tekstwoorden.tekstID = teksten.tekstID WHERE woorden.woord = "' . $_GET['woord'] . '";';
         $statement = $connection->prepare($sql);
@@ -35,7 +35,7 @@
                 <ul class="list-group">
                     <?php
                         foreach ($result as $value) {
-                            echo '<li class="list-group-item fw-bold">'. $value['tekstTitel'] .'</li>';
+                            echo '<a href="../tekst?tekst='. $value['tekstID'] .'"><li class="list-group-item fw-bold">'. $value['tekstTitel'] .'</li></a>';
                         }
                     ?>
                 </ul>
