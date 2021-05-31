@@ -8,10 +8,11 @@
     <title>Document</title>
 </head>
 <body>
+    <?php include_once '../assets/php/partials/navbar.php' ?>
     <div class="container d-flex flex-column align-items-center">
-        <h1>Leden dashboard</h1>
+        <h1 class="mt-5">Leden dashboard</h1>
         
-        <ul class="list-group list-group-horizontal">
+        <ul class="list-group list-group-horizontal mt-5">
             <li class="list-group-item">Aantal teksten: 5</li>
             <li class="list-group-item">Aantal leesteksens: 603</li>
             <li class="list-group-item">Aantal hoofdletters: 40</li>
@@ -37,6 +38,42 @@
                 <div class="card-body">
                     <h5 class="card-title">kortste tekst</h5>
                     <a href=""><h5 class="card-title"><u>Tekst 3</u></h5></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between w-100 mt-5">
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Minst gebruikte woorden</p>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Minst gebruikte letters</p>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Meest gebruikte woorden</p>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">Meest gebruikte letters</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between w-50 mt-5">
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <a href=""><h5 class="card-title">Alle teksten zien</h5></a>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <a href=""><h5 class="card-title">Tekst versturen</h5></a>
                 </div>
             </div>
         </div>
