@@ -19,11 +19,16 @@
   <h1 class="h1 text-center mb-3">Tekst schrijven</h1>
   <h4 class="h4 text-center mb-3">max 500 karakters</h4>
     <input class="form-control input-sm" id="inputsm" type="text">
-  </div>
-        <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
-        <label> Aantal Woorden: X </label>
-        <label> Aantal Letters: X </label>
-      </div>
     </div>
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" onkeyup="countCharacters(this.value)"></textarea>
+        <label> Aantal Letters: <span id="characterCount">0</span>/500 </label>
+    </div>
+  </div>
+  <script>
+    let characterSpan = document.getElementById('characterCount')
+    function countCharacters(text) {
+      characterSpan.innerText = text.length
+    }
+  </script>
 </body>
 </html>
