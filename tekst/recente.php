@@ -27,14 +27,15 @@
                 <h1 class="h1 text-center mb-3">Uw Recente Tekst</h1>
             </div>
             <?php while ($row = $q->fetch()): ?>
+            <label readonly class="form-control"><b><?php echo htmlspecialchars($row['tekstTitel']); ?></b></label>
             <textarea readonly class="form-control rounded-0" rows="10" ><?php echo htmlspecialchars($row['tekst']); ?></textarea>
-            <div class="d-flex justify-content-center">
-                <label class="p-2 align-self-stretch">Aantal Tekens: (<?php echo htmlspecialchars($row['aantalTekens']); ?>)</span></label>
-                <label class="p-2 align-self-stretch">Aantal Zinnen: (<?php echo htmlspecialchars($row['aantalZinnen']); ?>)</span></label>
-                <label class="p-2 align-self-stretch">Aantal Hoofdletters: (<?php echo htmlspecialchars($row['aantalHoofdLetters']); ?>)</span></label>
-                <label class="p-2 align-self-stretch">Aantal Kleineletters: (<?php echo htmlspecialchars($row['aantalKleineLetters']); ?>)</span></label>
-                <label class="p-2 align-self-stretch">Aantal Klinkers: (<?php echo htmlspecialchars($row['aantalKlinkers']); ?>)</span></label>
-                <label class="p-2 align-self-stretch">Aantal Medeklinkers: (<?php echo htmlspecialchars($row['aantalMedeklinkers']); ?>)</span></label>
+            <div class="row">
+                <label class="col-2">Aantal Tekens: (<?php echo htmlspecialchars($row['aantalTekens']); ?>)</span></label>
+                <label class="col-2">Aantal Zinnen: (<?php echo htmlspecialchars($row['aantalZinnen']); ?>)</span></label>
+                <label class="col-2">Aantal Hoofdletters: (<?php echo htmlspecialchars($row['aantalHoofdLetters']); ?>)</span></label>
+                <label class="col-2">Aantal Kleineletters: (<?php echo htmlspecialchars($row['aantalKleineLetters']); ?>)</span></label>
+                <label class="col-2">Aantal Klinkers: (<?php echo htmlspecialchars($row['aantalKlinkers']); ?>)</span></label>
+                <label class="col-2">Aantal Medeklinkers: (<?php echo htmlspecialchars($row['aantalMedeklinkers']); ?>)</span></label>
             </div>
             <?php endwhile; ?>
         </div>
