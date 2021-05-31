@@ -1,6 +1,6 @@
 <?php
 
-    php include_once '../assets/php/partials/navbar.php'
+    include_once '../assets/php/partials/navbar.php';
     require '../assets/php/partials/config.php';
     try  {
         $connection = new PDO($dsn, $username, $password, $options);
