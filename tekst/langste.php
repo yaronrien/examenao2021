@@ -5,7 +5,7 @@
     try{
         $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-        $sql = 'SELECT * FROM teksten ORDER BY aantalTekens DESC, toevoegDatum LIMIT 1';
+        $sql = 'SELECT * FROM teksten ORDER BY aantalTekens DESC, toevoegDatum DESC LIMIT 1';
         $q = $pdo->query($sql);
         $q->setFetchMode(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
