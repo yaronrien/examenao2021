@@ -1,0 +1,4 @@
+AuthUserFile "C:\xampp\Passwords\.htpasswd"
+AuthType Basic
+AuthName "XAMPP Password Protected"
+Require user Lid
