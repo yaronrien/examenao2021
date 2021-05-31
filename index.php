@@ -14,7 +14,7 @@
         <div class="text-center">
             <h1>Wie zijn wij?</h1>
             <p>De Geletterde Vrienden(DGV) is een stichting die zich bezighoudt met de Nederlandse taal.</p>
-            <a class="btn btn-lg btn-secondary" href="#" role="button"> Meld je aan!</a>
+            <a class="btn btn-lg btn-secondary" href="#" role="button">Meld je aan!</a>
         </div>
     </div>
 </body>
