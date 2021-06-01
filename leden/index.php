@@ -24,15 +24,6 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
     <?php include_once '../assets/php/partials/navbar.php' ?>
     <div class="container d-flex flex-column align-items-center">
         <h1 class="mt-5">Leden dashboard</h1>
-        
-        <ul class="list-group list-group-horizontal mt-5">
-            <li class="list-group-item">Aantal teksten: 5</li>
-            <li class="list-group-item">Aantal leesteksens: 603</li>
-            <li class="list-group-item">Aantal hoofdletters: 40</li>
-            <li class="list-group-item">Aantal kleine letters: 30</li>
-            <li class="list-group-item">Aantal klinkers: 30</li>
-            <li class="list-group-item">Aantal medeklinkers: 30</li>
-        </ul>
 
         <div class="d-flex justify-content-between w-75 mt-5">
             <div class="card text-center" style="width: 18rem;">
