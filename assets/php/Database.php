@@ -1,5 +1,9 @@
 <?php
 
+namespace assets\php;
+use PDO;
+use PDOException;
+
 class Database {
 
     protected $connection;

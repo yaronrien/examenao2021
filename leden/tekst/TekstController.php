@@ -1,6 +1,8 @@
 <?php
 
-include_once '../assets/php/Database.php';
+namespace leden\tekst;
+use assets\php\Database;
+use PDO;
 
 class TekstController extends Database {
     private function countCapitals($s) {
@@ -9,6 +11,13 @@ class TekstController extends Database {
 
     private function countLowerCase($s) {
         return preg_match_all("/[a-z]/", $s);
+    }
+
+    public function getTekst($id) {
+        $stmt = $this->connection->prepare("SELECT * FROM teksten WHERE tekstID = " . $id);
+        $stmt->execute();
+
+        return $stmt->fetch();
     }
 
     public function saveTekst() {
