@@ -7,7 +7,8 @@ $ledenController = new LedenController();
 
 $mostUsedWords = $ledenController->getMostUsedWords();
 $mostLeastWords = $ledenController->getLeastUsedWords();
-
+$mostUsedLetter = $ledenController->getMostUsedLetters();
+$leastUsedLetter = $ledenController->getLeastUsedLetters();
 ?>
 
 <!DOCTYPE html>
@@ -54,36 +55,50 @@ $mostLeastWords = $ledenController->getLeastUsedWords();
         <div class="d-flex justify-content-between w-100 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <p class="card-text">Minst gebruikte woorden</p>
+                    <p class="card-text">Meest gebruikte letters</p>
+                    <ol>
+                        <?php
+                            foreach ($mostUsedLetter as $letter) {
+                                echo '<li>' . $letter['teken'] . '</li>';
+                            }
+                        ?>
+                    </ol>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <p class="card-text">Minst gebruikte letters</p>
+                    <ol>
+                        <?php
+                            foreach ($leastUsedLetter as $letter) {
+                                echo '<li>' . $letter['teken'] . '</li>';
+                            }
+                        ?>
+                    </ol>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <p class="card-text">Meest gebruikte woorden</p>
-                    <ul>
+                    <ol>
                         <?php
                             foreach ($mostUsedWords as $word) {
                                 echo '<li>' . $word['woord'] . '</li>';
                             }
                         ?>
-                    </ul>
+                    </ol>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <p class="card-text">Meest gebruikte letters</p>
-                    <ul>
+                    <p class="card-text">Minst gebruikte letters</p>
+                    <ol>
                         <?php
                             foreach ($mostLeastWords as $word) {
                                 echo '<li>' . $word['woord'] . '</li>';
                             }
                         ?>
-                    </ul>
+                    </ol>
                 </div>
             </div>
         </div>

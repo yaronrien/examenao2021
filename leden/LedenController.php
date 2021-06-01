@@ -17,4 +17,18 @@ class LedenController extends Database {
 
         return $stmt->fetchAll();
     }
+
+    public function getMostUsedLetters() {
+        $stmt = $this->connection->prepare("SELECT teken FROM letters ORDER BY aantalInWoorden DESC LIMIT 5");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public function getLeastUsedLetters() {
+        $stmt = $this->connection->prepare("SELECT teken FROM letters ORDER BY aantalInWoorden  LIMIT 5");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+}
 }
