@@ -36,17 +36,17 @@ $mostLeastWords = $ledenController->getLeastUsedWords();
         <div class="d-flex justify-content-between w-75 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=recent"><h5 class="card-title">Recente tekst</h5></a>
+                <a class="btn btn-outline-dark btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/analyse/?method=recent"><h5 class="card-title">Recente tekst</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=longest"><h5 class="card-title">Langste tekst</h5></a>
+                <a class="btn btn-outline-dark btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/analyse/?method=longest"><h5 class="card-title">Langste tekst</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=shortest"><h5 class="card-title">kortste tekst</h5></a>
+                <a class="btn btn-outline-dark btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/analyse/?method=shortest"><h5 class="card-title">Kortste tekst</h5></a>
                 </div>
             </div>
         </div>
