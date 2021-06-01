@@ -2,7 +2,6 @@
 
 namespace leden;
 use assets\php\Database;
-use PDO;
 
 class LedenController extends Database {
     public function getMostUsedWords() {
