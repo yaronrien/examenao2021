@@ -38,9 +38,7 @@
   <h4 class="h4 text-center mb-3">max 500 karakters</h4>
     <input class="form-control input-sm" name="tekstTitel" maxlength = "80"  type="text" placeholder="Titel">
     </div>
-        <textarea class="form-control rounded-0" name="tekst" maxlength = "500" rows="10" onkeyup="countCharacters(this.value)"
-        placeholder="Schrijf een mooie tekst hier!, misschien over jankees? let wel wel dat je maximaal 500 tekens mag schrijven!" >
-        </textarea>
+        <textarea class="form-control rounded-0" name="tekst" maxlength="500" rows="10" onkeyup="countCharacters(this.value)" placeholder="Schrijf tekst"></textarea>
         <label> Aantal Letters: <span id="characterCount">0</span>/500 </label>
     </div>
   </div>

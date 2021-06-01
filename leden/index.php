@@ -70,12 +70,12 @@
         <div class="d-flex justify-content-between w-50 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href=""><h5 class="card-title">Alle teksten zien</h5></a>
+                    <a href="../tekst/teksten.php"><h5 class="card-title">Alle teksten zien</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href=""><h5 class="card-title">Tekst versturen</h5></a>
+                    <a href="../tekst"><h5 class="card-title">Tekst versturen</h5></a>
                 </div>
             </div>
         </div>
