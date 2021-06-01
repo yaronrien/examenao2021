@@ -1,21 +1,12 @@
 <?php
     include_once '../assets/php/partials/navbar.php';
-    include_once '../assets/php/partials/config.php';
+    include_once './TekstController.php';
  
     if(isset($_POST['submit'])){
-       try{
-            $connection = new PDO($dsn, $username, $password, $options);
-        }catch(PDOException $error){
-            echo 'Oh jeetje.. Check je database gegevens.. ';
-        } 
 
-        $stmt = $connection->prepare("INSERT INTO teksten (tekstTitel, tekst, toevoegDatum) VALUES(:tekstTitel, :tekst, NOW())");
+        $tekstController = new TekstController();
 
-        $stmt -> bindParam(":tekstTitel", $_POST["tekstTitel"], PDO::PARAM_STR);
-        $stmt -> bindParam(":tekst", $_POST["tekst"], PDO::PARAM_STR);
-
-        $stmt->execute();
-
+        $tekstController->saveTekst();
     }
  
   ?>
