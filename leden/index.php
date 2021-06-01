@@ -26,20 +26,17 @@
         <div class="d-flex justify-content-between w-75 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Recente tekst</h5>
-                    <a href=""><h5 class="card-title"><u>Tekst 3</u></h5></a>
+                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=recent"><h5 class="card-title">Recente tekst</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Langste tekst</h5>
-                    <a href=""><h5 class="card-title"><u>Tekst 3</u></h5></a>
+                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=longest"><h5 class="card-title">Langste tekst</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">kortste tekst</h5>
-                    <a href=""><h5 class="card-title"><u>Tekst 3</u></h5></a>
+                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=shortest"><h5 class="card-title">kortste tekst</h5></a>
                 </div>
             </div>
         </div>
@@ -75,7 +72,7 @@
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href="../tekst"><h5 class="card-title">Tekst versturen</h5></a>
+                    <a href="http://localhost/examenao2021/leden/tekst/"><h5 class="card-title">Tekst versturen</h5></a>
                 </div>
             </div>
         </div>
