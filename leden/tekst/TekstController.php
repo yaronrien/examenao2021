@@ -13,6 +13,13 @@ class TekstController extends Database {
         return preg_match_all("/[a-z]/", $s);
     }
 
+    public function getAll() {
+        $stmt = $this->connection->prepare("SELECT * FROM teksten");
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     public function getTekst($id) {
         $stmt = $this->connection->prepare("SELECT * FROM teksten WHERE tekstID = " . $id);
         $stmt->execute();

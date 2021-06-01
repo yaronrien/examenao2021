@@ -1,4 +1,14 @@
+<?php
+include_once '../autoloader.php';
 
+use leden\LedenController;
+
+$ledenController = new LedenController();
+
+$mostUsedWords = $ledenController->getMostUsedWords();
+$mostLeastWords = $ledenController->getLeastUsedWords();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,11 +65,25 @@
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <p class="card-text">Meest gebruikte woorden</p>
+                    <ul>
+                        <?php
+                            foreach ($mostUsedWords as $word) {
+                                echo '<li>' . $word['woord'] . '</li>';
+                            }
+                        ?>
+                    </ul>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <p class="card-text">Meest gebruikte letters</p>
+                    <ul>
+                        <?php
+                            foreach ($mostLeastWords as $word) {
+                                echo '<li>' . $word['woord'] . '</li>';
+                            }
+                        ?>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -67,7 +91,7 @@
         <div class="d-flex justify-content-between w-50 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href="../tekst/teksten.php"><h5 class="card-title">Alle teksten zien</h5></a>
+                    <a href="http://localhost/examenao2021/leden/tekst/alle"><h5 class="card-title">Alle teksten zien</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
