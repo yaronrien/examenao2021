@@ -1,6 +1,7 @@
 <?php
-    include_once '../assets/php/partials/navbar.php';
-    include_once './TekstController.php';
+    include_once '../../autoloader.php';
+    include_once '../../assets/php/partials/navbar.php';
+    use leden\tekst\TekstController;
  
     if(isset($_POST['submit'])){
 
@@ -15,7 +16,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
 <form method="post">
