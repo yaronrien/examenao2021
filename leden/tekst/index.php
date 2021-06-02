@@ -5,15 +5,9 @@
 
     $data = $_POST;
     if(isset($_POST['submit'])){
-        if(empty($data['tekstTitel']) ||
-          empty($data['tekst'])) {
-            
-          header("Location: /examenao2021/leden/tekst");
-          exit();
-            
-      } else {
+        if(!(empty($data['tekstTitel']) || empty($data['tekst']))) {
             echo '<script>alert("Tekst is verstuurd!")</script>';
-      }
+        }
 
         $tekstController = new TekstController();
 
@@ -40,22 +34,25 @@
                         <div class="form-group">
                             <h1 class="h1 text-center mb-3">Tekst schrijven</h1>
                             <h4 class="h4 text-center mb-3">max 500 karakters</h4>
-                            <input class="form-control input-sm" name="tekstTitel" maxlength="80" type="text"
+                            <input required class="form-control input-sm" name="tekstTitel" maxlength="80" type="text"
                                 placeholder="Titel">
                         </div>
                         <textarea class="form-control rounded-0" name="tekst" required maxlength="500" rows="10"
-                            onkeyup="countCharacters(this.value)" placeholder="Schrijf tekst"> </textarea>
+                            onkeyup="countCharacters(this.value)" placeholder="Schrijf tekst"></textarea>
                         <label> Aantal Letters: <span id="characterCount">0</span>/500 </label>
+                        <input type="submit" name="submit" value="Tekst versturen">
                     </div>
                 </div>
-                <script>
-                let characterSpan = document.getElementById('characterCount')
+            </div>
+        </div>
+    </form>
+    <script>
+    let characterSpan = document.getElementById('characterCount')
 
-                function countCharacters(text) {
-                    characterSpan.innerText = text.length
-                }
-                </script>
-                <input type="submit" name="submit" value="Tekst versturen">
+    function countCharacters(text) {
+        characterSpan.innerText = text.length
+    }
+    </script>
 </body>
 
 </html>
