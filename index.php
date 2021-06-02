@@ -7,7 +7,6 @@
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Home</title>
 </head>
 <body>
