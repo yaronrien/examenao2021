@@ -7,11 +7,13 @@
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Home</title>
 </head>
 <body>
-    <div class=" mt-5 container">
-        <div class="text-center">
+<div class=" mt-5 container">
+    <div class="card text-center" style="width: 80rem;">
+        <div class="card text-center">
             <h1>Wie zijn wij?</h1>
             <p>Stichting De Geletterde Vrinden (DGV) is een stichting die zich interesseert in tekststatistieken.</p> 
             <p>In de huidige tijd worden veel woorden door emojicons vervangen.</p>
@@ -22,4 +24,5 @@
             <a class="btn btn-lg btn-secondary" href="mailto:info@degeletterdevrinden.com?subject=Account%20Aanvragen&body=Goedendag%2C%0A%0AIk%20zou%20mij%20graag%20aanwillen%20melden%20voor%20jullie%20site!%0A%0AMet%20vriendelijke%20groet%2C%0A" role="button">Meld je aan!</a>
         </div>
     </div>
+</div>
 </body>
