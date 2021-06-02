@@ -62,7 +62,7 @@ class TekstController extends Database {
         $aantalMedeKlinkers = strlen(str_replace(['a', 'e', 'u', 'i', 'o'], "", $_POST['tekst']));
         $stmt -> bindParam(":aantalMedeklinkers", $aantalMedeKlinkers , PDO::PARAM_INT);
 
-        $aantalZinnen = substr_count($_POST['tekst'], '.') + substr_count($_POST['tekst'], '?') + substr_count($_POST['tekst'], '!') + substr_count($_POST['tekst'], ';');
+        $aantalZinnen = substr_count($_POST['tekst'], '.') + substr_count($_POST['tekst'], '?') + substr_count($_POST['tekst'], '!') + substr_count($_POST['tekst'], ':');
         $stmt -> bindParam(':aantalZinnen', $aantalZinnen , PDO::PARAM_INT);
         
         $stmt->execute();
@@ -75,7 +75,7 @@ class TekstController extends Database {
         foreach ($textArray as $word) {
             $stmt = $this->connection->prepare("SELECT woord, woordID FROM woorden WHERE woord = '" . $word . "'");
             $stmt->execute();
-
+            
             $results = $stmt->fetchAll();
             $word = strtolower($word);
             if (!(count($results) > 0)) {
@@ -102,6 +102,22 @@ class TekstController extends Database {
                     array_push($uniqueWords, $word);
                 } else {
                     $stmt = $this->connection->prepare("UPDATE tekstwoorden SET aantalInstancesPetTekst = aantalInstancesPetTekst + 1 WHERE tekstID = " . $textID . " AND woordID = " . $results[0]['woordID']);
+                    $stmt->execute();
+                }
+            }
+
+            $wordArray = str_split($word);
+            foreach ($wordArray as $char) {
+                $stmt = $this->connection->prepare("SELECT teken FROM letters WHERE teken = '" . $char . "'");
+                $stmt->execute();
+
+                $results = $stmt->fetchAll();
+
+                if (!(count($results) > 0)) {
+                    $stmt = $this->connection->prepare("INSERT INTO letters (teken, aantalInWoorden) VALUES ('" . $char ."', '1')");
+                    $stmt->execute();
+                } else {
+                    $stmt = $this->connection->prepare("UPDATE letters SET aantalInWoorden = aantalInWoorden + 1 WHERE teken = '" . $results[0]['teken'] . "'");
                     $stmt->execute();
                 }
             }
