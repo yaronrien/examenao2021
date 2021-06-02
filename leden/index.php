@@ -74,7 +74,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
                     <ol>
                         <?php
                             foreach ($mostUsedWords as $word) {
-                                echo '<li>' . $word['woord'] . '</li>';
+                                echo '<li><a href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
                             }
                         ?>
                     </ol>
@@ -86,7 +86,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
                     <ol>
                         <?php
                             foreach ($mostLeastWords as $word) {
-                                echo '<li>' . $word['woord'] . '</li>';
+                                echo '<li><a href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
                             }
                         ?>
                     </ol>
