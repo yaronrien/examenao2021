@@ -21,7 +21,7 @@ class TekstController extends Database {
     }
 
     public function getTekst($id) {
-        $stmt = $this->connection->prepare("SELECT * FROM teksten WHERE tekstID = " . $id);
+        $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters FROM teksten WHERE tekstID = " . $id);
         $stmt->execute();
 
         return $stmt->fetch();
@@ -29,13 +29,13 @@ class TekstController extends Database {
 
     public function getTekstWithMethod($method) {
         if ($method === 'recent') {
-            $stmt = $this->connection->prepare("SELECT * FROM teksten ORDER BY toevoegDatum DESC LIMIT 1");
+            $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters FROM teksten ORDER BY toevoegDatum DESC LIMIT 1");
             $stmt->execute();
         } else if ($method === 'longest') {
-            $stmt = $this->connection->prepare("SELECT * FROM teksten ORDER BY LENGTH(tekst) DESC, toevoegDatum DESC LIMIT 1");
+            $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters FROM teksten ORDER BY LENGTH(tekst) DESC, toevoegDatum DESC LIMIT 1");
             $stmt->execute();
         } else if ($method === 'shortest') {
-            $stmt = $this->connection->prepare("SELECT * FROM teksten ORDER BY LENGTH(tekst), toevoegDatum DESC LIMIT 1");
+            $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters FROM teksten ORDER BY LENGTH(tekst), toevoegDatum DESC LIMIT 1");
             $stmt->execute();
         }
 
