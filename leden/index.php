@@ -28,17 +28,17 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
         <div class="d-flex justify-content-between w-75 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=recent"><h5 class="card-title">Recente tekst</h5></a>
+                <a class="btn btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/analyse/?method=recent"><h5 class="card-title">Recente tekst</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=longest"><h5 class="card-title">Langste tekst</h5></a>
+                <a class="btn btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/analyse/?method=longest"><h5 class="card-title">Langste tekst</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                <a href="http://localhost/examenao2021/leden/tekst/analyse/?method=shortest"><h5 class="card-title">kortste tekst</h5></a>
+                <a class="btn btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/analyse/?method=shortest"><h5 class="card-title">Kortste tekst</h5></a>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
                     <ol>
                         <?php
                             foreach ($mostUsedWords as $word) {
-                                echo '<li>' . $word['woord'] . '</li>';
+                                echo '<li><a href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
                             }
                         ?>
                     </ol>
@@ -86,7 +86,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
                     <ol>
                         <?php
                             foreach ($mostLeastWords as $word) {
-                                echo '<li>' . $word['woord'] . '</li>';
+                                echo '<li><a href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
                             }
                         ?>
                     </ol>
@@ -94,7 +94,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
             </div>
         </div>
         
-        <div class="d-flex justify-content-between w-50 mt-5">
+        <div class="d-flex justify-content-between w-75 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <a href="http://localhost/examenao2021/leden/tekst/alle"><h5 class="card-title">Alle teksten zien</h5></a>
@@ -103,6 +103,11 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
                     <a href="http://localhost/examenao2021/leden/tekst/"><h5 class="card-title">Tekst versturen</h5></a>
+                </div>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                    <a href="http://localhost/examenao2021/leden/woord/overzicht.php"><h5 class="card-title">Alle woorden zien</h5></a>
                 </div>
             </div>
         </div>
