@@ -21,7 +21,7 @@ class Database {
         try{
             $this->connection = new PDO($dsn, $username, $password, $options);
         }catch(PDOException $error){
-            echo 'Oh jeetje.. Check je database gegevens.. ';
+            echo $error->getMessage();
         }
     }
 

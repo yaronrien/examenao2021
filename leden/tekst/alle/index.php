@@ -30,7 +30,7 @@ $alleTeksten = $tekstController->getAll();
             
             <?php
                 foreach ($alleTeksten as $tekst) {
-                    echo '<label readonly class="form-control"><a href="http://localhost/examenao2021/leden/tekst/analyse/?tekstID=' . $tekst['TekstID'] . '"><b>' . $tekst['tekstTitel'] . '</b></a></label>
+                    echo '<label readonly class="form-control"><a class="text-decoration-none link-info text-capitalize" href="http://localhost/examenao2021/leden/tekst/analyse/?tekstID=' . $tekst['TekstID'] . '"><b>' . $tekst['tekstTitel'] . '</b></a></label>
                             <div class="row">
                             <br>
 
