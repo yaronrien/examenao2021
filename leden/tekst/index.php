@@ -32,7 +32,7 @@
                 <div class="col-md-12">
                     <div class="form-group">
 
-                        <div class="form-group">
+                        <div class="form-group mb-3">
                             <h1 class="h1 text-center mb-3">Tekst schrijven</h1>
                             <h4 class="h4 text-center mb-3">max 500 karakters</h4>
                             <input required class="form-control input-sm" name="tekstTitel" maxlength="80" type="text"
@@ -40,8 +40,8 @@
                         </div>
                         <textarea class="form-control rounded-0" name="tekst" required maxlength="500" rows="10"
                             onkeyup="countCharacters(this.value)" placeholder="Schrijf tekst"></textarea>
-                        <label> Aantal Letters: <span id="characterCount">0</span>/500 </label>
-                        <input type="submit" name="submit" value="Tekst versturen">
+                        <label> Aantal Letters: <span id="characterCount">0</span>/500 </label><br />
+                        <input class="btn btn-outline-dark mt-3" type="submit" name="submit" value="Tekst versturen">
                     </div>
                 </div>
             </div>

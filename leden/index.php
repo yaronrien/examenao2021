@@ -19,6 +19,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Leden Dashboard</title>
 </head>
 <body>
@@ -75,7 +76,7 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
                     <ol>
                         <?php
                             foreach ($mostUsedWords as $word) {
-                                echo '<li><a href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
+                                echo '<li><a class="text-decoration-none link-info text-capitalize" href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
                             }
                         ?>
                     </ol>
@@ -83,11 +84,11 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <p class="card-text">Minst gebruikte letters</p>
+                    <p class="card-text">Minst gebruikte woorden</p>
                     <ol>
                         <?php
                             foreach ($mostLeastWords as $word) {
-                                echo '<li><a href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
+                                echo '<li><a class="text-decoration-none link-info text-capitalize" href="http://localhost/examenao2021/leden/woord/?woordID=' .  $word['woordID'] . '">' . $word['woord'] . '</a></li>';
                             }
                         ?>
                     </ol>
@@ -98,17 +99,17 @@ $leastUsedLetter = $ledenController->getLeastUsedLetters();
         <div class="d-flex justify-content-between w-75 mt-5">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href="http://localhost/examenao2021/leden/tekst/alle"><h5 class="card-title">Alle teksten zien</h5></a>
+                    <a class="btn btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/alle"><h5 class="card-title">Alle teksten zien</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href="http://localhost/examenao2021/leden/tekst/"><h5 class="card-title">Tekst versturen</h5></a>
+                    <a class="btn btn-block stretched-link" href="http://localhost/examenao2021/leden/tekst/"><h5 class="card-title">Tekst versturen</h5></a>
                 </div>
             </div>
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <a href="http://localhost/examenao2021/leden/woord/overzicht.php"><h5 class="card-title">Alle woorden zien</h5></a>
+                    <a class="btn btn-block stretched-link" href="http://localhost/examenao2021/leden/woord/overzicht.php"><h5 class="card-title">Alle woorden zien</h5></a>
                 </div>
             </div>
         </div>
