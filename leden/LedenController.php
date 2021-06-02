@@ -30,5 +30,5 @@ class LedenController extends Database {
         $stmt->execute();
 
         return $stmt->fetchAll();
-}
+    }
 }

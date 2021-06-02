@@ -13,5 +13,15 @@ class WoordController extends Database {
         $statement->execute();
         return $statement->fetchAll();
     }
+
+    public function getWords() {
+        $sql = 'SELECT woorden.aantalInTeksten, woorden.aantalKlinkers, woorden.aantalMedeklinkers, teksten.tekstTitel, teksten.tekstID, woorden.woord, woorden.woordID FROM woorden
+        LEFT JOIN tekstwoorden ON woorden.woordID = tekstwoorden.woordID
+        LEFT JOIN teksten ON tekstwoorden.tekstID = teksten.tekstID WHERE woorden.woordID';
+    
+        $statement = $this->connection->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 }
 
