@@ -21,10 +21,18 @@ class TekstController extends Database {
     }
 
     public function getTekst($id) {
-        $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters FROM teksten WHERE tekstID = " . $id);
+        $stmt = $this->connection->prepare("SELECT teksten.*, LENGTH(tekst) as aantalKarakters FROM teksten WHERE teksten.tekstID = " . $id);
+        $stmt->execute();
+        $results = $stmt->fetch();
+
+        return $results;
+    }
+
+    public function getWoordenFromTekst($tekstID) {
+        $stmt = $this->connection->prepare("SELECT * FROM tekstwoorden LEFT JOIN woorden on tekstwoorden.woordID = woorden.woordID WHERE tekstwoorden.tekstID = " . $tekstID . " ORDER BY woorden.woord");
         $stmt->execute();
 
-        return $stmt->fetch();
+        return $stmt->fetchAll();
     }
 
     public function getTekstWithMethod($method) {

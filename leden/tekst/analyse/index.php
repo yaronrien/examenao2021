@@ -13,6 +13,8 @@ if (isset($_GET['method'])) {
     $tekstObj = $tekstController->getTekstWithMethod($_GET['method']);
 }
 
+$woorden = $tekstController->getWoordenFromTekst($tekstObj['TekstID'])
+
 
 ?>
 
@@ -39,6 +41,24 @@ if (isset($_GET['method'])) {
             <label class="col-2">Aantal Klinkers: (<?= $tekstObj['aantalKlinkers'] ?>)</span></label>
             <label class="col-2">Aantal Medeklinkers: (<?= $tekstObj['aantalMedeklinkers'] ?>)</span></label>
         </div>
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th>Woord</th>
+                    <th>Totaal aantal keren voorgekomen</th>
+                    <th>Aantal keren voorgekomen in de tekst</th>
+                    <th>Aantal klinkers</th>
+                    <th>Aantal medeklinkers</th>
+                </tr>
+            </thead>
+            <?php 
+
+                foreach ($woorden as $woord) {
+                    echo "<tr><td>" . $woord['woord'] . "</td> <td>" . $woord['aantalInTeksten'] . "</td> <td>" . $woord['aantalInstancesPetTekst'] . "</td> <td>" .  $woord['aantalKlinkers'] ."</td> <td>" . $woord['aantalMedeklinkers'] . "</td></tr>";
+                }
+            
+            ?>
+        </table>
     </div>
 </body>
 </html>
