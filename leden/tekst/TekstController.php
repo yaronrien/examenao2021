@@ -47,6 +47,8 @@ class TekstController extends Database {
         } else if ($method === 'shortest') {
             $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters, LENGTH(tekst)-LENGTH(REPLACE(tekst, ' ', '')) + 1 as aantalWoorden FROM teksten ORDER BY LENGTH(tekst), toevoegDatum DESC LIMIT 1");
             $stmt->execute();
+        } else {
+            header('Location: http://localhost/examenao2021/404.html');
         }
 
         $results = $stmt->fetch();
