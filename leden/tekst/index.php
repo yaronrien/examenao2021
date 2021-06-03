@@ -23,6 +23,7 @@
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Schrijf uw tekst</title>
 </head>
 
 <body>
