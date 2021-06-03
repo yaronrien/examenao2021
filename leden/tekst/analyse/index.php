@@ -35,6 +35,7 @@ $woorden = $tekstController->getWoordenFromTekst($tekstObj['TekstID'])
         <textarea readonly class="form-control rounded-0 mt-3" rows="10" ><?= $tekstObj['tekst'] ?></textarea>
         <div class="row">
             <label class="col-2">Aantal Karakters: (<?= $tekstObj['aantalKarakters'] ?>)</span></label>
+            <label class="col-2">Aantal Woorden: (<?= $tekstObj['aantalWoorden'] ?>)</span></label>
             <label class="col-2">Aantal Leestekens: (<?= $tekstObj['aantalTekens'] ?>)</span></label>
             <label class="col-2">Aantal Zinnen: (<?= $tekstObj['aantalZinnen'] ?>)</span></label>
             <label class="col-2">Aantal Hoofdletters: (<?= $tekstObj['aantalHoofdLetters'] ?>)</span></label>
