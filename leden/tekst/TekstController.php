@@ -25,8 +25,8 @@ class TekstController extends Database {
         $stmt -> bindParam(":tekstID", $id, PDO::PARAM_INT);
         $stmt->execute();
         $results = $stmt->fetch();
-        
-        return $results;
+
+        return $this->redirect($results);
     }
 
     public function getWoordenFromTekst($tekstID) {
@@ -47,9 +47,12 @@ class TekstController extends Database {
         } else if ($method === 'shortest') {
             $stmt = $this->connection->prepare("SELECT *, LENGTH(tekst) as aantalKarakters, LENGTH(tekst)-LENGTH(REPLACE(tekst, ' ', '')) + 1 as aantalWoorden FROM teksten ORDER BY LENGTH(tekst), toevoegDatum DESC LIMIT 1");
             $stmt->execute();
+        } else {
+            header('Location: http://localhost/examenao2021/404.html');
         }
 
-        return $stmt->fetch();
+        $results = $stmt->fetch();
+        return $this->redirect($results);
     }
 
     public function saveTekst() {

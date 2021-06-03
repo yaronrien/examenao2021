@@ -10,10 +10,12 @@ class WoordController extends Database {
         LEFT JOIN tekstwoorden ON woorden.woordID = tekstwoorden.woordID
         LEFT JOIN teksten ON tekstwoorden.tekstID = teksten.tekstID WHERE woorden.woordID = :woordID;';
 
-        $statement = $this->connection->prepare($sql);
-        $statement->bindParam(':woordID', $_GET['woordID'], PDO::PARAM_INT);
-        $statement->execute();
-        return $statement->fetchAll();
+        $stmt = $this->connection->prepare($sql);
+        $stmt->bindParam(':woordID', $_GET['woordID'], PDO::PARAM_INT);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+        
+        return $this->redirect($results);
     }
 
     public function getWords() {
@@ -21,9 +23,11 @@ class WoordController extends Database {
         LEFT JOIN tekstwoorden ON woorden.woordID = tekstwoorden.woordID
         LEFT JOIN teksten ON tekstwoorden.tekstID = teksten.tekstID WHERE woorden.woordID';
     
-        $statement = $this->connection->prepare($sql);
-        $statement->execute();
-        return $statement->fetchAll();
+        $stmt = $this->connection->prepare($sql);
+        $stmt->execute();
+        $results = $stmt->fetchAll();
+
+        return $this->redirect($results);
     }
 }
 

@@ -22,7 +22,7 @@ $wordDetails = $woordController->getWords();
 </head>
 <body>
     <div class="d-flex flex-column align-items-center w-75 mx-auto text-center">
-        <h1 class="mt-5">Uw Geschreven Woorden</h1>
+        <h1 class="mt-5">Alle Geschreven Woorden</h1>
         <div class="row row-cols-3 row-cols-md-3 g-4">
             <?php
                 foreach ($wordDetails as $value) {

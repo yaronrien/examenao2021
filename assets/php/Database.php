@@ -25,6 +25,14 @@ class Database {
         }
     }
 
+    protected function redirect($results){
+        if (!$results) {
+            header('Location: http://localhost/examenao2021/404.html');
+        
+        } else {
+            return $results;
+        }
+    }
 }
 
 
