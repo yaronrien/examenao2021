@@ -24,7 +24,6 @@ class Database {
             echo $error->getMessage();
         }
     }
-
 }
 
 
