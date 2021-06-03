@@ -15,12 +15,7 @@ class WoordController extends Database {
         $stmt->execute();
         $results = $stmt->fetchAll();
         
-        if (!$results) {
-            header('Location: http://localhost/examenao2021/404.html');
-            
-        } else {
-            return $results;
-        }
+        return $this->redirect($results);
     }
 
     public function getWords() {
@@ -31,7 +26,8 @@ class WoordController extends Database {
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         $results = $stmt->fetchAll();
-        return $results;
+
+        return $this->redirect($results);
     }
 }
 

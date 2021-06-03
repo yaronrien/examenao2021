@@ -26,12 +26,7 @@ class TekstController extends Database {
         $stmt->execute();
         $results = $stmt->fetch();
 
-        if (!$results) {
-            header('Location: http://localhost/examenao2021/404.html');
-            
-        } else {
-            return $results;
-        }
+        return $this->redirect($results);
     }
 
     public function getWoordenFromTekst($tekstID) {
@@ -55,13 +50,7 @@ class TekstController extends Database {
         }
 
         $results = $stmt->fetch();
-        
-        if (!$results) {
-            header('Location: http://localhost/examenao2021/404.html');
-
-        } else {
-            return $results;
-        }
+        return $this->redirect($results);
     }
 
     public function saveTekst() {
