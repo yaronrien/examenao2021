@@ -75,7 +75,7 @@ class TekstController extends Database {
         
         $stmt->execute();
         $textID = $this->connection->lastInsertId();
-        $textArray = str_replace(['.', ',', '?', '!'], '', $_POST['tekst']);
+        $textArray = str_replace(['.', ',', '?', '!', ';', "'", '"'], '', $_POST['tekst']);
         $textArray = preg_replace("/\s+/", ' ', $textArray);
         $textArray = explode(' ', $textArray);
 
